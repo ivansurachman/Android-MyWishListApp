@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold (
                     modifier = Modifier.fillMaxSize(),
                 ) {innerPadding ->
-                    HomeView(modifier = Modifier.padding(innerPadding))
+                    Navigation(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -35,6 +35,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     MyWishlishAppTheme {
-        HomeView()
+        Navigation()
     }
 }
