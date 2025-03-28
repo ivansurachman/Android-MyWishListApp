@@ -12,6 +12,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 
+/**
+ * [WishViewModel] is a ViewModel class responsible for managing the UI-related data and
+ * state for the Wish screen or feature. It interacts with the [WishRepository] to perform
+ * CRUD operations on wishes.
+ *
+ * @property wishRepository The repository responsible for handling wish data. Defaults to the
+ *                          wishRepository provided by the [Graph].
+ */
 class WishViewModel(
     private val wishRepository: WishRepository = Graph.wishRepository
 ): ViewModel() {

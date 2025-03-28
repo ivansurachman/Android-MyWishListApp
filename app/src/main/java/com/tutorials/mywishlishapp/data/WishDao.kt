@@ -8,6 +8,12 @@ import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * Data Access Object (DAO) for interacting with the Wish entities in the database.
+ *
+ * This interface defines methods for performing CRUD (Create, Read, Update, Delete) operations
+ * on the `Wish` table. It leverages Room's annotations to simplify database interactions.
+ */
 @Dao
 abstract class WishDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)

@@ -36,6 +36,29 @@ import androidx.navigation.NavController
 import com.tutorials.mywishlishapp.data.Wish
 import kotlinx.coroutines.launch
 
+/**
+ * A Composable function that displays a view for adding or editing a wish.
+ *
+ * This function provides a UI for users to either create a new wish or modify an existing one.
+ * It includes text fields for the wish's title and description, as well as a button to save the changes.
+ *
+ * @param modifier Modifier for styling and layout customization.
+ * @param id The ID of the wish to edit. If 0L, a new wish will be created.
+ * @param viewModel The [WishViewModel] instance for managing wish data.
+ * @param navController The [NavController] for navigating back after saving.
+ *
+ * @see WishViewModel
+ * @see Wish
+ * @see AppBarView
+ * @see WishTextField
+ *
+ * Functionality:
+ * - **Edit Mode (id != 0L):**
+ *   - Retrieves the wish data based on the provided `id` using `viewModel.getWishById(id)`.
+ *   - Populates the text fields with the existing wish's title and description.
+ *   - Sets the app bar title to "Update Wish".
+ *   - Upon clicking the save button, updates the wish via `viewModel.updateWish()`.
+ */
 @Composable
 fun AddEditDetailView(
     modifier: Modifier = Modifier,

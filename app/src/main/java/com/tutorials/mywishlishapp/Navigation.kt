@@ -13,6 +13,40 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 
 
+/**
+ * Navigation Composable function to handle navigation within the application.
+ *
+ * This function sets up the navigation graph using Jetpack Compose Navigation,
+ * defining the different screens and how to navigate between them. It uses a
+ * [NavHostController] to manage the back stack and transitions.
+ *
+ * @param viewModel The [WishViewModel] instance used by the composables within the navigation graph.
+ *                  Defaults to a newly created ViewModel if not provided.
+ * @param navController The [NavHostController] responsible for managing the navigation.
+ *                      Defaults to a [rememberNavController] instance if not provided.
+ * @param modifier Modifier to be applied to the root composable.
+ *
+ * The Navigation graph includes the following screens:
+ *   - **HomeScreen**: The main screen displaying a list of wishes.
+ *       - Route: [Screen.HomeScreen.route]
+ *       - Composable: [HomeView]
+ *   - **AddScreen**:  Screen for adding or editing a wish.
+ *       - Route: [Screen.AddScreen.route] + "/{id}"
+ *       - Arguments:
+ *         - `id`: A Long representing the ID of the wish to edit. Defaults to 0L (meaning a new wish).
+ *       - Composable: [AddEditDetailView]
+ *
+ * The flow is:
+ *   - The navigation starts at the [Screen.HomeScreen.route].
+ *   - From the home screen, you can navigate to the AddScreen, providing an id for edit or 0 for adding new wish.
+ *
+ * @see NavHostController
+ * @see NavHost
+ * @see Screen
+ * @see HomeView
+ * @see AddEditDetailView
+ * @see WishViewModel
+ */
 @Composable
 fun Navigation(
     viewModel: WishViewModel = viewModel(),

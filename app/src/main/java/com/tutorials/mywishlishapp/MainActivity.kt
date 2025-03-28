@@ -15,6 +15,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.tutorials.mywishlishapp.ui.theme.MyWishlishAppTheme
 
+/**
+ * MainActivity is the primary entry point for the MyWishlist application.
+ * It sets up the application's theme, content, and navigation.
+ *
+ * This class extends ComponentActivity, providing a base for building activities
+ * with Compose UI. It leverages the Material 3 Scaffold for a basic layout structure
+ * and enables edge-to-edge display.
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

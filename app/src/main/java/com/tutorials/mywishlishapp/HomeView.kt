@@ -36,6 +36,17 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.tutorials.mywishlishapp.data.Wish
 
+/**
+ * [HomeView] is the main screen of the application, displaying the user's wishlist.
+ *
+ * It utilizes a [Scaffold] to structure the screen with a top app bar, a floating action button for adding new wishes,
+ * and a [LazyColumn] to efficiently display the list of wishes. Each wish item can be swiped to delete,
+ * and clicking on a wish item navigates to the add/edit screen.
+ *
+ * @param modifier The modifier to be applied to the layout.
+ * @param navController The navigation controller used for navigating to other screens.
+ * @param viewModel The [WishViewModel] responsible for managing the wishlist data.
+ */
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun HomeView(

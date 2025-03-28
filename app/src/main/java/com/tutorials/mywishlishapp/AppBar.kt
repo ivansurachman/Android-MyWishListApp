@@ -16,6 +16,38 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 
+/**
+ * A custom Composable function that creates an AppBar (TopAppBar) with a title and optional back navigation.
+ *
+ * This function provides a consistent AppBar design across the application. It includes the following features:
+ * - Displays a title.
+ * - Optionally shows a back navigation icon (arrow) if the title is not "My Wishlist".
+ * - Customizable back navigation behavior via a lambda.
+ * - Consistent styling (color, elevation).
+ *
+ * @param title The title to be displayed in the AppBar.
+ * @param onBackNavClicked A lambda function that is executed when the back navigation icon is clicked.
+ *                         Defaults to an empty lambda (no action). It's only triggered when the back button is visible.
+ *
+ * Example Usage:
+ * ```
+ * AppBarView(
+ *     title = "Product Details",
+ *     onBackNavClicked = { navController.navigateUp() }
+ * )
+ * ```
+ *
+ * In this example "Product details" will be displayed as title and the back arrow will be displayed.
+ * When the user clicks on the back arrow, the navigation will go back to the previous route.
+ *
+ * ```
+ * AppBarView(
+ *     title = "My Wishlist",
+ * )
+ * ```
+ *
+ * In this example "My Wishlist" will be displayed as title and no back arrow will be displayed.
+ */
 @Composable
 fun AppBarView(
     title: String,
