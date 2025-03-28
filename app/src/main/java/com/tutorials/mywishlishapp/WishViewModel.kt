@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 
 class WishViewModel(
-    private val wishRepository: WishRepository
+    private val wishRepository: WishRepository = Graph.wishRepository
 ): ViewModel() {
     var wishTitleState by mutableStateOf("")
     var wishDescriptionState by mutableStateOf("")
@@ -36,9 +36,27 @@ class WishViewModel(
         }
     }
 
+    // Dispactchers.IO digunakan untuk menjalankan operasi input/output
+    // untuk optimasi performa aplikasi
     fun addWish(wish: Wish){
         viewModelScope.launch(Dispatchers.IO) {
             wishRepository.addWish(wish)
+        }
+    }
+
+    fun getWishById(id: Long): Flow<Wish> {
+        return wishRepository.getWishById(id)
+    }
+
+    fun updateWish(wish: Wish){
+        viewModelScope.launch(Dispatchers.IO) {
+            wishRepository.updateWish(wish)
+        }
+    }
+
+    fun deleteWish(wish: Wish){
+        viewModelScope.launch(Dispatchers.IO) {
+            wishRepository.deleteWish(wish)
         }
     }
 }
